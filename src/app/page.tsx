@@ -5,6 +5,8 @@ import { Values } from "@/components/sections/Values";
 import { Team } from "@/components/sections/Team";
 import { Stats } from "@/components/sections/Stats";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { Faq } from "@/components/sections/Faq";
+import { EnrolmentCta } from "@/components/sections/EnrolmentCta";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Team />
       <Stats />
       <Testimonials />
+      <Faq />
+      <EnrolmentCta />
     </>
   );
 }
