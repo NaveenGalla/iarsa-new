@@ -123,8 +123,38 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: #030303;
+    color: #ffffff;
   }
   html {
     @apply font-sans;
   }
+}
+
+/* ── IARSA dark theme tokens ── */
+:root {
+  --iarsa-bg: #030303;
+  --iarsa-surface: #0d0d0d;
+  --iarsa-surface-2: #161616;
+  --iarsa-border: rgba(255, 255, 255, 0.08);
+  --iarsa-blue: #006fe6;
+  --iarsa-blue-hover: #0059c2;
+  --iarsa-teal: #00b4a6;
+  --iarsa-gold: #d4a017;
+}
+
+/* ── Marquee ── */
+@keyframes scrollL {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollL 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
