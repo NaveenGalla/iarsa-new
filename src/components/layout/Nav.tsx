@@ -28,8 +28,8 @@ export function Nav() {
   useEffect(() => setOpen(false), [pathname]);
 
   const isActive = (href: string) => {
-    if (href.startsWith("/#")) return pathname === "/";
-    return pathname === href;
+    const hrefPath = href.split("#")[0] || "/";
+    return pathname === hrefPath;
   };
 
   return (
