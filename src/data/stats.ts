@@ -1,3 +1,5 @@
+import { PROGRAMS } from "./programs";
+
 export type Stat = {
   value: number;
   suffix: string;
@@ -8,5 +10,5 @@ export const STATS: Stat[] = [
   { value: 500, suffix: "+", label: "Students Trained" },
   { value: 10, suffix: "+", label: "Years of Excellence" },
   { value: 4, suffix: "", label: "Competition Levels" },
-  { value: 3, suffix: "", label: "Programs Offered" },
+  { value: PROGRAMS.length, suffix: "", label: "Programs Offered" },
 ];

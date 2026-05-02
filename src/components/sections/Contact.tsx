@@ -1,22 +1,17 @@
 "use client";
 
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { SITE } from "@/data/site";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export function Contact() {
+  const searchParams = useSearchParams();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [program, setProgram] = useState("");
+  const [program, setProgram] = useState(() => searchParams.get("program") ?? "");
   const [message, setMessage] = useState("");
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const p = searchParams.get("program");
-    if (p) setProgram(p);
-  }, [searchParams]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -41,10 +36,11 @@ export function Contact() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-white/50 text-xs uppercase tracking-widest block mb-2">
+              <label htmlFor="contact-name" className="text-white/50 text-xs uppercase tracking-widest block mb-2">
                 Your Name
               </label>
               <input
+                id="contact-name"
                 type="text"
                 required
                 value={name}
@@ -55,10 +51,11 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="text-white/50 text-xs uppercase tracking-widest block mb-2">
+              <label htmlFor="contact-phone" className="text-white/50 text-xs uppercase tracking-widest block mb-2">
                 Phone Number
               </label>
               <input
+                id="contact-phone"
                 type="tel"
                 required
                 value={phone}
@@ -69,10 +66,11 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="text-white/50 text-xs uppercase tracking-widest block mb-2">
+              <label htmlFor="contact-program" className="text-white/50 text-xs uppercase tracking-widest block mb-2">
                 Program Interest
               </label>
               <input
+                id="contact-program"
                 type="text"
                 value={program}
                 onChange={(e) => setProgram(e.target.value)}
@@ -82,10 +80,11 @@ export function Contact() {
             </div>
 
             <div>
-              <label className="text-white/50 text-xs uppercase tracking-widest block mb-2">
+              <label htmlFor="contact-message" className="text-white/50 text-xs uppercase tracking-widest block mb-2">
                 Message
               </label>
               <textarea
+                id="contact-message"
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -111,12 +110,13 @@ export function Contact() {
             <ul className="space-y-6 mb-8">
               {[
                 { icon: MapPin, label: "Address", value: SITE.address },
-                { icon: Phone, label: "Phone", value: SITE.phone },
+                { icon: Phone, label: "Phone", value: `${SITE.phone}\n${SITE.phone2}` },
                 { icon: Mail, label: "Email", value: SITE.email },
                 {
                   icon: Clock,
                   label: "Hours",
-                  value: "Mon–Sat: 6:00–8:00 AM & 5:30–7:30 PM\nSun: Advanced batch only",
+                  value:
+                    "Beginners: Tue/Wed/Fri/Sat/Sun 5–6:30 AM & 5–6:30 PM\nJuniors: Weekdays 4–5:30 PM · Weekends 5–8:30 AM & 4–5:30 PM\nSenior: Weekdays 6–8:30 PM · Weekends 5–8:30 AM & 6–8:30 PM",
                 },
               ].map(({ icon: Icon, label, value }) => (
                 <li key={label} className="flex gap-4">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,7 +25,13 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
+  const prevPathname = useRef(pathname);
+  useEffect(() => {
+    if (prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      setOpen(false);
+    }
+  }, [pathname]);
 
   const isActive = (href: string) => {
     // Hash anchors are homepage sections — don't mark any as "active"
@@ -99,6 +105,8 @@ export function Nav() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-nav"
           className="md:hidden flex flex-col gap-[5px] p-2 rounded-lg hover:bg-white/[0.06] transition-colors"
         >
           <motion.span
@@ -123,7 +131,8 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
-            className="fixed top-[60px] left-0 right-0 z-40 bg-[#0d0d0d]/97 backdrop-blur-xl border-b border-white/[0.08] px-[5%] py-5 flex flex-col gap-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+            id="mobile-nav"
+          className="fixed top-[60px] left-0 right-0 z-40 bg-[#0d0d0d]/97 backdrop-blur-xl border-b border-white/[0.08] px-[5%] py-5 flex flex-col gap-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
           >
             {NAV_LINKS.map(({ href, label }) => (
               <Link

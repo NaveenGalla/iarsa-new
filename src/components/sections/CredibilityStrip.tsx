@@ -1,10 +1,13 @@
+import { SITE, } from "@/data/site";
+import { STATS } from "@/data/stats";
+
 const ITEMS = [
-  "Est. 2003",
-  "500+ Students Trained",
+  `Est. ${SITE.established}`,
+  `${STATS[0].value}${STATS[0].suffix} ${STATS[0].label}`,
   "National Champion Founder",
-  "Visakhapatnam's #1 Academy",
+  `${SITE.city}'s Premier Academy`,
   "State & National Medalists",
-  "Shivaji Park, MVP Colony",
+  `${SITE.address.split(",")[0]}, MVP Colony`,
 ];
 
 export function CredibilityStrip() {

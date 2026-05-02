@@ -28,6 +28,9 @@ export function Faq() {
             <AnimatedSection key={question} delay={i * 0.05}>
               <div className="bg-[#161616] border border-white/[0.08] rounded-xl overflow-hidden">
                 <button
+                  type="button"
+                  aria-expanded={open === i}
+                  aria-controls={`faq-panel-${i}`}
                   onClick={() => setOpen(open === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-5 text-left"
                 >
@@ -51,13 +54,15 @@ export function Faq() {
                 <AnimatePresence initial={false}>
                   {open === i && (
                     <motion.div
+                      id={`faq-panel-${i}`}
+                      role="region"
                       initial={{ height: 0 }}
                       animate={{ height: "auto" }}
                       exit={{ height: 0 }}
                       transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-5 text-sm text-white/50 leading-relaxed border-t border-white/[0.06] pt-4">
+                      <div className="px-6 pb-5 text-sm text-white/50 leading-relaxed border-t border-white/[0.06] pt-4 whitespace-pre-line">
                         {answer}
                       </div>
                     </motion.div>

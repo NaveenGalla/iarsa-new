@@ -45,7 +45,7 @@ export function Hero() {
           >
             <Circle className="h-2 w-2 fill-[#00b4a6]" />
             <span className="text-sm text-white/60 tracking-wide">
-              {SITE.founderTitle} Founded · Est. {SITE.established}
+              Founded by {SITE.founderTitle} · Est. {SITE.established}
             </span>
           </motion.div>
 
