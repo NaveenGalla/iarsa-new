@@ -5,27 +5,33 @@ export type FaqItem = {
 
 export const FAQ: FaqItem[] = [
   {
-    question: "What age can children start skating?",
-    answer: "We welcome children from age 4. Our beginner program is specifically designed for young learners with age-appropriate teaching methods and safety gear.",
+    question: "What programs does IARSA offer?",
+    answer:
+      "We offer three programs: Beginners (all ages), Juniors Artistic, and Senior Artistic. Each is designed to take students from foundational skills through to competition-ready performance.",
   },
   {
-    question: "Do I need to bring my own skates?",
-    answer: "No. We provide all equipment for beginners including skates, helmets, knee pads, and wrist guards. Advanced students are encouraged to invest in their own skates after the first month.",
+    question: "What are the class timings?",
+    answer:
+      "Beginners: Tue, Wed, Fri, Sat & Sun — 5:00–6:30 AM or 5:00–6:30 PM (Mon & Thu are holidays).\nJuniors Artistic: Weekdays 4:00–5:30 PM; Weekends 5:00–8:30 AM & 4:00–5:30 PM.\nSenior Artistic: Weekdays 6:00–8:30 PM; Weekends 5:00–8:30 AM & 6:00–8:30 PM.",
   },
   {
     question: "Where are classes held?",
-    answer: "All classes are held at Shivaji Park, MVP Colony, Visakhapatnam. The venue has a dedicated skating track with smooth surface and proper lighting.",
+    answer:
+      "All classes are held at Shivaji Park, MVP Colony, Visakhapatnam, Andhra Pradesh. The rink was designed by a renowned architect and provides a proper skating surface.",
   },
   {
-    question: "How do I enrol?",
-    answer: "Send us a WhatsApp message or fill in the contact form. We'll schedule a free trial session so your child can experience the class before committing.",
+    question: "Are the instructors certified?",
+    answer:
+      "Yes. All our instructors are certified professionals who are passionate about skating and teaching. The academy was founded by S. Lakshman Rao, the All India National Roller Skating Champion (2005).",
   },
   {
     question: "Are there competition opportunities?",
-    answer: "Yes. We actively prepare students for district, state, and national level competitions under the Roller Skating Federation of India (RSFI). Several of our students have won medals at state level.",
+    answer:
+      "Absolutely. IARSA students compete at District, State, National, and International levels. Our students have won Gold, Silver and Bronze medals and certificates across all competition tiers.",
   },
   {
-    question: "What are the batch timings?",
-    answer: "We run morning batches (6:00 AM – 8:00 AM) and evening batches (5:30 PM – 7:30 PM), Monday to Saturday. Sunday is reserved for advanced competition training.",
+    question: "How do I get in touch?",
+    answer:
+      "Call or WhatsApp us: Simhadri at +91 99596 46165 or Srinivas at +91 97049 94994. You can also email us at iarsaskatingacademy@gmail.com or fill in the contact form on this site.",
   },
 ];

@@ -14,13 +14,13 @@ export function About() {
             <RevealText>Founded by a Champion</RevealText>
           </h2>
           <p className="text-white/55 text-base leading-relaxed mb-5">
-            {SITE.fullName} was founded by {SITE.founderTitle} {SITE.founder} in {SITE.established} with a single mission: bring world-class roller skating coaching to {SITE.city}.
+            {SITE.fullName} was founded by {SITE.founder} — {SITE.founderAchievement} — with a single mission: provide quality skating instruction in a safe, caring &amp; fun environment for everyone in {SITE.city}.
           </p>
           <p className="text-white/55 text-base leading-relaxed mb-5">
-            What began as a small group of passionate skaters at Shivaji Park has grown into {SITE.city}&apos;s most trusted academy, producing state and national-level champions year after year.
+            Based at Shivaji Park, MVP Colony, our academy trains beginners through senior artistic skaters. Students compete at District, State, National and International levels, winning Gold, Silver and Bronze medals.
           </p>
           <p className="text-white/55 text-base leading-relaxed">
-            Our coaching philosophy combines technical precision with genuine joy — we believe the best skaters are the ones who love the sport.
+            Ethics and safety are the core of everything we do. All instructors are certified professionals passionate about skating and teaching.
           </p>
         </AnimatedSection>
 
@@ -29,7 +29,7 @@ export function About() {
             <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-[#d4a017] to-transparent rounded-full" />
             <div className="text-[#d4a017] text-4xl font-serif mb-4 leading-none">&ldquo;</div>
             <blockquote className="text-white/80 text-lg leading-relaxed mb-6 font-light italic">
-              Skating is not just a sport — it is discipline, courage, and the freedom to fly on wheels. Every child who trains here carries that spirit.
+              To provide quality skating instruction by professional instructors, in a safe, caring &amp; fun environment. Ethics and safety are the main focus of our academy.
             </blockquote>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-[#006fe6]/20 border border-[#006fe6]/30 flex items-center justify-center text-[#006fe6] font-bold text-sm">
@@ -37,7 +37,7 @@ export function About() {
               </div>
               <div>
                 <div className="text-white font-semibold text-sm">{SITE.founder}</div>
-                <div className="text-[#d4a017] text-xs">{SITE.founderTitle} · Head Coach</div>
+                <div className="text-[#d4a017] text-xs">{SITE.founderAchievement} · Secretary &amp; Founder</div>
               </div>
             </div>
           </div>

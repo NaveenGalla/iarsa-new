@@ -67,7 +67,7 @@ export function Hero() {
 
           <motion.div custom={2} variants={fadeUp} initial="hidden" animate="visible">
             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-              {SITE.fullName} — {SITE.city}&apos;s premier skating academy. Beginner to national-level training under {SITE.founderTitle} {SITE.founder}.
+              {SITE.fullName} — a great and fun place for roller skaters in {SITE.city}. Founded by {SITE.founderAchievement.split(",")[0]}, the All India National Champion.
             </p>
           </motion.div>
 
@@ -101,8 +101,8 @@ export function Hero() {
           >
             {[
               { num: "500+", label: "Students" },
-              { num: "20+", label: "Years" },
-              { num: "45+", label: "Champions" },
+              { num: "10+", label: "Years" },
+              { num: "3", label: "Programs" },
             ].map(({ num, label }, i) => (
               <div
                 key={label}

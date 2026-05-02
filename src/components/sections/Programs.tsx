@@ -21,7 +21,7 @@ export function Programs() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROGRAMS.map(({ id, title, level, ageRange, duration, fee, description, highlights, accent }, i) => (
+          {PROGRAMS.map(({ id, title, level, ageRange, schedule, timings, description, highlights, accent }, i) => (
             <AnimatedSection key={id} delay={i * 0.08}>
               <div
                 className={cn(
@@ -49,11 +49,19 @@ export function Programs() {
                   ))}
                 </ul>
 
-                <div className="border-t border-white/[0.06] pt-5 grid grid-cols-3 gap-2 text-center mb-5">
-                  {[["Age", ageRange], ["Duration", duration], ["Fee", fee]].map(([label, val]) => (
-                    <div key={label}>
-                      <div className="text-[10px] text-white/30 uppercase tracking-widest mb-1">{label}</div>
-                      <div className="text-white/70 text-xs font-medium">{val}</div>
+                <div className="border-t border-white/[0.06] pt-5 mb-5 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5 w-16 flex-shrink-0">Age</span>
+                    <span className="text-white/70 text-xs font-medium">{ageRange}</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5 w-16 flex-shrink-0">Days</span>
+                    <span className="text-white/70 text-xs font-medium">{schedule}</span>
+                  </div>
+                  {timings.map((t) => (
+                    <div key={t} className="flex items-start gap-2">
+                      <span className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5 w-16 flex-shrink-0">Time</span>
+                      <span className="text-white/70 text-xs font-medium">{t}</span>
                     </div>
                   ))}
                 </div>

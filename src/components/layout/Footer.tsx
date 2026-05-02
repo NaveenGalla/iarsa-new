@@ -45,6 +45,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href={`tel:${SITE.phone2}`} className="hover:text-white transition-colors">
+                  {SITE.phone2}
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${SITE.email}`} className="hover:text-white transition-colors">
                   {SITE.email}
                 </a>
@@ -57,6 +62,24 @@ export function Footer() {
                   className="text-[#00b4a6] hover:text-[#00c4b4] transition-colors"
                 >
                   WhatsApp Us
+                </a>
+              </li>
+              <li className="flex gap-4 pt-1">
+                <a
+                  href={SITE.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Facebook
+                </a>
+                <a
+                  href={SITE.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  YouTube
                 </a>
               </li>
             </ul>

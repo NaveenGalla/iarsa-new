@@ -6,7 +6,7 @@ export type Stat = {
 
 export const STATS: Stat[] = [
   { value: 500, suffix: "+", label: "Students Trained" },
-  { value: 20, suffix: "+", label: "Years Active" },
-  { value: 45, suffix: "+", label: "State Champions" },
-  { value: 12, suffix: "", label: "National Medals" },
+  { value: 10, suffix: "+", label: "Years of Excellence" },
+  { value: 4, suffix: "", label: "Competition Levels" },
+  { value: 3, suffix: "", label: "Programs Offered" },
 ];

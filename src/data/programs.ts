@@ -1,10 +1,10 @@
 export type Program = {
   id: string;
   title: string;
-  level: "Beginner" | "Intermediate" | "Advanced" | "Specialty";
+  level: "Beginner" | "Intermediate" | "Advanced";
   ageRange: string;
-  duration: string;
-  fee: string;
+  schedule: string;
+  timings: string[];
   description: string;
   highlights: string[];
   accent: string;
@@ -12,58 +12,60 @@ export type Program = {
 
 export const PROGRAMS: Program[] = [
   {
-    id: "beginner",
-    title: "Beginner Skating",
+    id: "beginners",
+    title: "Beginners",
     level: "Beginner",
-    ageRange: "4–10 years",
-    duration: "3 months",
-    fee: "₹1,500/month",
-    description: "Introduction to roller skating — balance, basic moves, and confidence on wheels.",
-    highlights: ["Safety gear provided", "Patient instructors", "Small batch sizes"],
+    ageRange: "All ages welcome",
+    schedule: "Tue, Wed, Fri, Sat & Sun",
+    timings: ["Morning: 5:00 AM – 6:30 AM", "Evening: 5:00 PM – 6:30 PM"],
+    description:
+      "Introduction to roller skating — balance, basic moves, and confidence on wheels in a safe and fun environment.",
+    highlights: [
+      "Certified professional instructors",
+      "Safe, caring environment",
+      "Morning & evening batches",
+      "Mon & Thu are holidays",
+    ],
     accent: "from-blue-500/20",
   },
   {
-    id: "intermediate",
-    title: "Intermediate Skating",
+    id: "juniors-artistic",
+    title: "Juniors Artistic",
     level: "Intermediate",
-    ageRange: "8–16 years",
-    duration: "6 months",
-    fee: "₹2,000/month",
-    description: "Build speed, agility, and technique. Prepares students for district-level competitions.",
-    highlights: ["Slalom & cone drills", "Speed work", "Competition prep"],
+    ageRange: "Juniors",
+    schedule: "Mon – Sun",
+    timings: [
+      "Weekdays: 4:00 PM – 5:30 PM",
+      "Weekends: 5:00 AM – 8:30 AM & 4:00 PM – 5:30 PM",
+    ],
+    description:
+      "Artistic skating program combining technique and creativity. Prepares juniors for state and national competitions.",
+    highlights: [
+      "Artistic & figure skating",
+      "Weekend morning sessions",
+      "Competition preparation",
+      "Professional coaching",
+    ],
     accent: "from-teal-500/20",
   },
   {
-    id: "advanced",
-    title: "Advanced Training",
+    id: "senior-artistic",
+    title: "Senior Artistic",
     level: "Advanced",
-    ageRange: "12+ years",
-    duration: "Ongoing",
-    fee: "₹2,500/month",
-    description: "Intensive training for state and national level competition. Personalised coaching.",
-    highlights: ["State team pathway", "Video analysis", "Nutrition guidance"],
-    accent: "from-indigo-500/20",
-  },
-  {
-    id: "speed",
-    title: "Speed Skating",
-    level: "Specialty",
-    ageRange: "10+ years",
-    duration: "6 months",
-    fee: "₹2,200/month",
-    description: "Dedicated speed skating track training. Focus on race starts, cornering, and stamina.",
-    highlights: ["Track sessions", "Timing gates", "Race strategy"],
-    accent: "from-cyan-500/20",
-  },
-  {
-    id: "artistic",
-    title: "Artistic Skating",
-    level: "Specialty",
-    ageRange: "6–18 years",
-    duration: "6 months",
-    fee: "₹2,200/month",
-    description: "Creative skating combining dance and figure elements. Ideal for performances and artistic competitions.",
-    highlights: ["Choreography", "Music sync", "Solo & pairs"],
+    ageRange: "Seniors",
+    schedule: "Mon – Sun",
+    timings: [
+      "Weekdays: 6:00 PM – 8:30 PM",
+      "Weekends: 5:00 AM – 8:30 AM & 6:00 PM – 8:30 PM",
+    ],
+    description:
+      "Advanced artistic skating for experienced skaters. Intensive training for International, National, State and District competitions.",
+    highlights: [
+      "International level training",
+      "Gold, Silver & Bronze medalists",
+      "Extended weekend sessions",
+      "Performance & competition focus",
+    ],
     accent: "from-violet-500/20",
   },
 ];
