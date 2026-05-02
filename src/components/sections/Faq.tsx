@@ -25,7 +25,7 @@ export function Faq() {
 
         <div className="space-y-3">
           {FAQ.map(({ question, answer }, i) => (
-            <AnimatedSection key={i} delay={i * 0.05}>
+            <AnimatedSection key={question} delay={i * 0.05}>
               <div className="bg-[#161616] border border-white/[0.08] rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}

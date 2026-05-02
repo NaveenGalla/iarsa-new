@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { SITE } from "@/data/site";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -8,12 +9,20 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 export function Contact() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [program, setProgram] = useState("");
   const [message, setMessage] = useState("");
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const p = searchParams.get("program");
+    if (p) setProgram(p);
+  }, [searchParams]);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const programLine = program ? `\nProgram interest: ${program}` : "";
     const text = encodeURIComponent(
-      `Hi! I'm ${name} (${phone}).\n\n${message}`
+      `Hi! I'm ${name} (${phone}).${programLine}\n\n${message}`
     );
     window.open(`https://wa.me/${SITE.whatsapp}?text=${text}`, "_blank");
   };
@@ -55,6 +64,19 @@ export function Contact() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+91 98765 43210"
+                className={inputClass}
+              />
+            </div>
+
+            <div>
+              <label className="text-white/50 text-xs uppercase tracking-widest block mb-2">
+                Program Interest
+              </label>
+              <input
+                type="text"
+                value={program}
+                onChange={(e) => setProgram(e.target.value)}
+                placeholder="e.g. Beginners, Juniors Artistic, Senior Artistic"
                 className={inputClass}
               />
             </div>

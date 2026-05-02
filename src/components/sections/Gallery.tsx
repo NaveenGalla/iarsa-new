@@ -1,5 +1,6 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ExternalLink } from "lucide-react";
+import { SITE } from "@/data/site";
 
 const GALLERY_ITEMS = [
   { id: 1, alt: "Students in beginner class at Shivaji Park", aspect: "aspect-square" },
@@ -40,7 +41,7 @@ export function Gallery() {
 
         <AnimatedSection className="text-center">
           <a
-            href="https://youtube.com/@iarsa"
+            href={SITE.youtube}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#00b4a6] border border-[#00b4a6]/30 hover:bg-[#00b4a6]/10 px-6 py-3 rounded-full text-sm font-medium transition-all"

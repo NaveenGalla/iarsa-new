@@ -14,7 +14,7 @@ export function CredibilityStrip() {
     <div className="bg-[#0d0d0d] border-y border-white/[0.08] overflow-hidden py-4">
       <div className="marquee-track">
         {doubled.map((item, i) => (
-          <div key={i} className="flex items-center gap-8 px-8 flex-shrink-0">
+          <div key={`${i}-${item}`} className="flex items-center gap-8 px-8 flex-shrink-0">
             <span className="text-sm text-white/50 font-medium tracking-wide whitespace-nowrap">
               {item}
             </span>

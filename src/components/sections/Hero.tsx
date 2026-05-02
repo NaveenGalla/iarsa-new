@@ -6,6 +6,7 @@ import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ElegantShape } from "@/components/ui/shape-landing-hero";
 import { SITE } from "@/data/site";
+import { STATS } from "@/data/stats";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -99,11 +100,7 @@ export function Hero() {
             animate="visible"
             className="flex justify-center gap-0 mt-14 pt-8 border-t border-white/[0.08]"
           >
-            {[
-              { num: "500+", label: "Students" },
-              { num: "10+", label: "Years" },
-              { num: "3", label: "Programs" },
-            ].map(({ num, label }, i) => (
+            {STATS.slice(0, 3).map(({ value, suffix, label }, i) => (
               <div
                 key={label}
                 className={cn(
@@ -111,7 +108,7 @@ export function Hero() {
                   i < 2 && "border-r border-white/[0.08]"
                 )}
               >
-                <div className="text-2xl font-bold text-white font-mono">{num}</div>
+                <div className="text-2xl font-bold text-white font-mono">{value}{suffix}</div>
                 <div className="text-xs text-white/35 mt-1 tracking-wide">{label}</div>
               </div>
             ))}

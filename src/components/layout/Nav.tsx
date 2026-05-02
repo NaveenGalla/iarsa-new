@@ -10,7 +10,7 @@ import { SITE } from "@/data/site";
 const NAV_LINKS = [
   { href: "/#about", label: "About" },
   { href: "/programs", label: "Programs" },
-  { href: "/#gallery", label: "Gallery" },
+  { href: "/programs#gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -126,6 +126,7 @@ export function Nav() {
               <Link
                 key={href}
                 href={href}
+                onClick={() => setOpen(false)}
                 className="text-base font-medium text-white/80 py-3 border-b border-white/[0.06]"
               >
                 {label}
@@ -133,6 +134,7 @@ export function Nav() {
             ))}
             <Link
               href="/contact"
+              onClick={() => setOpen(false)}
               className="mt-2.5 bg-[#006fe6] text-white text-center py-3.5 rounded-[14px] font-semibold"
             >
               Enrol Now
