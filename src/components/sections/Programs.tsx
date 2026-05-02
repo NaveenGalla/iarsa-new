@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function Programs() {
   return (
-    <section className="bg-[#030303] px-[5%] py-20 md:py-28">
+    <section id="programs" className="bg-[#030303] px-[5%] py-20 md:py-28">
       <div className="max-w-6xl mx-auto">
         <AnimatedSection className="text-center mb-14">
           <div className="text-[#00b4a6] text-xs font-semibold uppercase tracking-widest mb-4">

@@ -3,7 +3,8 @@ import { SITE } from "@/data/site";
 
 const FOOTER_LINKS = [
   { href: "/#about", label: "About" },
-  { href: "/programs", label: "Programs" },
+  { href: "/#programs", label: "Programs" },
+  { href: "/#gallery", label: "Gallery" },
   { href: "/#team", label: "Team" },
   { href: "/#testimonials", label: "Testimonials" },
   { href: "/#faq", label: "FAQ" },

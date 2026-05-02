@@ -9,8 +9,8 @@ import { SITE } from "@/data/site";
 
 const NAV_LINKS = [
   { href: "/#about", label: "About" },
-  { href: "/programs", label: "Programs" },
-  { href: "/programs#gallery", label: "Gallery" },
+  { href: "/#programs", label: "Programs" },
+  { href: "/#gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -28,8 +28,11 @@ export function Nav() {
   useEffect(() => setOpen(false), [pathname]);
 
   const isActive = (href: string) => {
-    const hrefPath = href.split("#")[0] || "/";
-    return pathname === hrefPath;
+    // Hash anchors are homepage sections — don't mark any as "active"
+    // since we can't track scroll position without an observer.
+    // Only true page routes (e.g. /contact) get the active underline.
+    if (href.includes("#")) return false;
+    return pathname === href;
   };
 
   return (
